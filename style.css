@@ -1,0 +1,1006 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --bg: #07111f;
+    --card: rgba(255, 255, 255, 0.08);
+    --card-border: rgba(255, 255, 255, 0.12);
+
+    --text: #f8fbff;
+    --muted: #9eafc3;
+
+    --accent: #63b3ff;
+    --accent-2: #8d7cff;
+
+    --shadow:
+        0 25px 80px rgba(0, 0, 0, 0.35);
+}
+
+
+body {
+    font-family: "Inter", sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #102d4c,
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            #241b4b,
+            transparent 40%
+        ),
+        var(--bg);
+
+    color: var(--text);
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.background-orb {
+    position: fixed;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    opacity: 0.25;
+
+    pointer-events: none;
+}
+
+
+.orb-one {
+    background: #3182ce;
+
+    top: -150px;
+    left: -150px;
+}
+
+
+.orb-two {
+    background: #805ad5;
+
+    right: -150px;
+    bottom: -150px;
+}
+
+
+/* =========================
+   APP
+========================= */
+
+.app {
+    width: min(1200px, 92%);
+
+    margin: auto;
+
+    padding: 35px 0 25px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.topbar {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+
+.brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.brand-icon {
+    width: 50px;
+    height: 50px;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 25px;
+
+    border-radius: 15px;
+
+    background: rgba(255,255,255,0.1);
+
+    border: 1px solid var(--card-border);
+
+    backdrop-filter: blur(15px);
+}
+
+
+.brand h1 {
+    font-size: 24px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+}
+
+
+.brand p {
+    color: var(--muted);
+
+    font-size: 12px;
+
+    margin-top: 3px;
+}
+
+
+.location-btn {
+    border: 1px solid var(--card-border);
+
+    background: var(--card);
+
+    color: white;
+
+    padding: 11px 16px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: 0.25s;
+}
+
+
+.location-btn:hover {
+    background: rgba(255,255,255,0.14);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-section {
+    position: relative;
+
+    margin-bottom: 25px;
+}
+
+
+.search-box {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 6px;
+
+    border-radius: 16px;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid var(--card-border);
+
+    backdrop-filter: blur(20px);
+}
+
+
+.search-icon {
+    font-size: 27px;
+
+    margin-left: 13px;
+
+    color: var(--muted);
+}
+
+
+.search-box input {
+    flex: 1;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 15px;
+
+    padding: 14px 0;
+}
+
+
+.search-box input::placeholder {
+    color: #7e91a8;
+}
+
+
+.search-box button {
+    border: none;
+
+    background: linear-gradient(
+        135deg,
+        var(--accent),
+        var(--accent-2)
+    );
+
+    color: white;
+
+    padding: 12px 22px;
+
+    border-radius: 11px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+.search-box button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(99,179,255,0.25);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero-card {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding: 35px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.12),
+            rgba(255,255,255,0.04)
+        );
+
+    border: 1px solid var(--card-border);
+
+    backdrop-filter: blur(25px);
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+.hero-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    background: rgba(99,179,255,0.12);
+
+    border-radius: 50%;
+
+    filter: blur(60px);
+
+    right: -100px;
+    top: -100px;
+}
+
+
+.location {
+    display: flex;
+
+    gap: 12px;
+
+    align-items: center;
+}
+
+
+.location > span {
+    font-size: 21px;
+}
+
+
+.location h2 {
+    font-size: 25px;
+
+    letter-spacing: -0.5px;
+}
+
+
+.location p {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin-top: 4px;
+}
+
+
+.current-weather {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 35px;
+}
+
+
+.weather-icon {
+    font-size: 90px;
+
+    line-height: 1;
+
+    filter:
+        drop-shadow(
+            0 15px 25px rgba(0,0,0,0.25)
+        );
+
+    animation: float 4s ease-in-out infinite;
+}
+
+
+@keyframes float {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+.temperature {
+    font-size: 76px;
+
+    font-weight: 800;
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+}
+
+
+.degree {
+    font-size: 40px;
+
+    vertical-align: top;
+
+    margin-left: 3px;
+}
+
+
+#condition {
+    font-size: 18px;
+
+    font-weight: 600;
+
+    margin-top: 13px;
+}
+
+
+.feels {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin-top: 6px;
+}
+
+
+/* =========================
+   HERO RIGHT
+========================= */
+
+.hero-right {
+    min-width: 240px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    text-align: right;
+}
+
+
+.date {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.date span:first-child {
+    font-size: 19px;
+
+    font-weight: 700;
+}
+
+
+.date span:last-child {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+.sun-info {
+    display: flex;
+
+    gap: 25px;
+
+    justify-content: flex-end;
+}
+
+
+.sun-info > div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.sun-info span {
+    font-size: 22px;
+}
+
+
+.sun-info small {
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+.sun-info strong {
+    font-size: 14px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    margin-top: 35px;
+}
+
+
+.section-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 16px;
+}
+
+
+.section-heading h3 {
+    font-size: 18px;
+}
+
+
+.section-heading p {
+    color: var(--muted);
+
+    font-size: 12px;
+
+    margin-top: 4px;
+}
+
+
+.unit-toggle {
+    background: transparent;
+
+    border: 1px solid var(--card-border);
+
+    color: var(--muted);
+
+    padding: 8px 13px;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   DETAILS
+========================= */
+
+.details-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+
+.detail-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    background: var(--card);
+
+    border: 1px solid var(--card-border);
+
+    transition: 0.25s;
+}
+
+
+.detail-card:hover {
+    transform: translateY(-4px);
+
+    background:
+        rgba(255,255,255,0.12);
+}
+
+
+.detail-icon {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    font-size: 19px;
+}
+
+
+.detail-card p {
+    color: var(--muted);
+
+    font-size: 11px;
+
+    margin-bottom: 5px;
+}
+
+
+.detail-card strong {
+    font-size: 15px;
+}
+
+
+/* =========================
+   HOURLY
+========================= */
+
+.hourly-container {
+    display: flex;
+
+    gap: 12px;
+
+    overflow-x: auto;
+
+    padding-bottom: 8px;
+
+    scrollbar-width: thin;
+}
+
+
+.hour-card {
+    min-width: 105px;
+
+    padding: 18px 12px;
+
+    text-align: center;
+
+    border-radius: 17px;
+
+    background: var(--card);
+
+    border: 1px solid var(--card-border);
+
+    transition: 0.25s;
+}
+
+
+.hour-card.active {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(99,179,255,0.25),
+            rgba(141,124,255,0.18)
+        );
+
+    border-color:
+        rgba(99,179,255,0.35);
+}
+
+
+.hour-card:hover {
+    transform: translateY(-4px);
+}
+
+
+.hour-card p {
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+.hour-card .hour-icon {
+    font-size: 25px;
+
+    margin: 12px 0;
+}
+
+
+.hour-card strong {
+    font-size: 15px;
+}
+
+
+/* =========================
+   WEEKLY
+========================= */
+
+.weekly-container {
+    display: grid;
+
+    gap: 10px;
+}
+
+
+.day-card {
+    display: grid;
+
+    grid-template-columns:
+        1.2fr
+        0.8fr
+        1fr
+        1fr;
+
+    align-items: center;
+
+    padding: 16px 20px;
+
+    border-radius: 16px;
+
+    background: var(--card);
+
+    border: 1px solid var(--card-border);
+
+    transition: 0.25s;
+}
+
+
+.day-card:hover {
+    background:
+        rgba(255,255,255,0.11);
+}
+
+
+.day-name {
+    font-weight: 700;
+}
+
+
+.day-condition {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+.day-condition span {
+    font-size: 22px;
+}
+
+
+.day-temp {
+    text-align: right;
+
+    font-weight: 700;
+}
+
+
+.day-rain {
+    text-align: right;
+
+    color: var(--accent);
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.loading {
+    display: none;
+
+    min-height: 300px;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    color: var(--muted);
+}
+
+
+.spinner {
+    width: 40px;
+    height: 40px;
+
+    border: 3px solid rgba(255,255,255,0.15);
+
+    border-top-color: var(--accent);
+
+    border-radius: 50%;
+
+    animation: spin 0.8s linear infinite;
+}
+
+
+@keyframes spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.error {
+    display: none;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    background: rgba(255,80,80,0.1);
+
+    border: 1px solid rgba(255,80,80,0.2);
+
+    color: #ffb4b4;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 50px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid rgba(255,255,255,0.08);
+
+    color: #72849a;
+
+    font-size: 11px;
+}
+
+
+footer a {
+    color: var(--accent);
+
+    text-decoration: none;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+
+    .hero-card {
+        flex-direction: column;
+    }
+
+    .hero-right {
+        text-align: left;
+
+        gap: 25px;
+    }
+
+    .sun-info {
+        justify-content: flex-start;
+    }
+
+    .details-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .app {
+        width: 94%;
+
+        padding-top: 20px;
+    }
+
+
+    .topbar {
+        align-items: flex-start;
+    }
+
+
+    .brand p {
+        display: none;
+    }
+
+
+    .location-btn span {
+        display: none;
+    }
+
+
+    .hero-card {
+        padding: 24px;
+
+        border-radius: 22px;
+    }
+
+
+    .weather-icon {
+        font-size: 65px;
+    }
+
+
+    .temperature {
+        font-size: 58px;
+    }
+
+
+    .degree {
+        font-size: 30px;
+    }
+
+
+    .current-weather {
+        gap: 15px;
+
+        margin-top: 25px;
+    }
+
+
+    .details-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+    }
+
+
+    .detail-card {
+        padding: 15px;
+
+        gap: 10px;
+    }
+
+
+    .detail-icon {
+        width: 35px;
+        height: 35px;
+
+        font-size: 15px;
+    }
+
+
+    .day-card {
+        grid-template-columns:
+            1fr
+            1fr
+            1fr;
+
+        gap: 8px;
+    }
+
+
+    .day-rain {
+        text-align: left;
+    }
+
+
+    footer {
+        flex-direction: column;
+
+        gap: 7px;
+    }
+
+      }
